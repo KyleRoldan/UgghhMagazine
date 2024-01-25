@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../managers/authManager";
-import { Button, FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { login } from "../../managers/AuthManager";
 
 export default function Login({ setLoggedInUser }) {
   const navigate = useNavigate();
@@ -24,10 +23,10 @@ export default function Login({ setLoggedInUser }) {
   return (
     <div className="container" style={{ maxWidth: "500px" }}>
       <h3>Login</h3>
-      <FormGroup>
-        <Label>Email</Label>
-        <Input
-          invalid={failedLogin}
+      <div>
+        <label>Email</label>
+        <input
+          className={failedLogin ? "is-invalid" : ""}
           type="text"
           value={email}
           onChange={(e) => {
@@ -35,11 +34,11 @@ export default function Login({ setLoggedInUser }) {
             setEmail(e.target.value);
           }}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label>Password</Label>
-        <Input
-          invalid={failedLogin}
+      </div>
+      <div>
+        <label>Password</label>
+        <input
+          className={failedLogin ? "is-invalid" : ""}
           type="password"
           value={password}
           onChange={(e) => {
@@ -47,12 +46,12 @@ export default function Login({ setLoggedInUser }) {
             setPassword(e.target.value);
           }}
         />
-        <FormFeedback>Login failed.</FormFeedback>
-      </FormGroup>
+        {failedLogin && <div className="invalid-feedback">Login failed.</div>}
+      </div>
 
-      <Button color="primary" onClick={handleSubmit}>
+      <button className="btn btn-primary" onClick={handleSubmit}>
         Login
-      </Button>
+      </button>
       <p>
         Not signed up? Register <Link to="/register">here</Link>
       </p>

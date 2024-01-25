@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace ugghhMagazine.Models.DTOs;
+namespace UgghhMagazine.Models.DTOs;
 
 public class UserProfileDTO
 {
@@ -12,6 +12,10 @@ public class UserProfileDTO
     public string? Email { get; set; }
 
     public string? UserName { get; set; }
+
+    public string? IsAdmin { get; set; }
+    
+
     public List<string>? Roles { get; set; }
 
     public string? IdentityUserId { get; set; }

@@ -27,11 +27,13 @@
 
 import { useEffect, useState } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { tryGetLoggedInUser } from "./managers/authManager";
-import { Spinner } from "reactstrap";
+
+
+
 import NavBar from "./components/NavBar";
 import ApplicationViews from "./components/ApplicationViews";
+import { tryGetLoggedInUser } from "./managers/AuthManager";
+
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState();
@@ -40,13 +42,15 @@ function App() {
     // user will be null if not authenticated
     tryGetLoggedInUser().then((user) => {
       setLoggedInUser(user);
+      console.log(user)
     });
   }, []);
 
-  // wait to get a definite logged-in state before rendering
+  // Wait to get a definite logged-in state before rendering
   if (loggedInUser === undefined) {
-    return <Spinner />;
+    return <p>Loading...</p>;
   }
+
 
   return (
     <>

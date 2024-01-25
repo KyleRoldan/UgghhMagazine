@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
-using ugghhMagazine.Data;
+using UgghhMagazine.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
     {
-        options.Cookie.Name = "ugghhMagazineLoginCookie";
+        options.Cookie.Name = "UgghhMagazineLoginCookie";
         options.Cookie.SameSite = SameSiteMode.Strict;
         options.Cookie.HttpOnly = true; //The cookie cannot be accessed through JS (protects against XSS)
         options.Cookie.MaxAge = new TimeSpan(7, 0, 0, 0); // cookie expires in a week regardless of activity
@@ -73,12 +73,6 @@ app.UseAuthorization();
 app.MapControllers();////////This tells ASP.NET that we want to use controllers to create 
 //endpoints, and the framework is able to discover those controllers in our code.
 
-app.Run();
-
-
-
-
 ///////////////Complete Work Order///////////////////////////////////////////////////////////////////
 
-
-
+app.Run();

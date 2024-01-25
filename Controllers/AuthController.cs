@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Text;
-using ugghhMagazine.Models;
-using ugghhMagazine.Models.DTOs;
-using ugghhMagazine.Data;
+using UgghhMagazine.Models;
+using UgghhMagazine.Models.DTOs;
+using UgghhMagazine.Data;
 
-namespace ugghhMagazine.Controllers;
+namespace UgghhMagazine.Controllers;
 
 
 [ApiController]
@@ -139,7 +139,7 @@ public class AuthController : ControllerBase
             {
                 FirstName = registration.FirstName,
                 LastName = registration.LastName,
-                Address = registration.Address,
+               
                 IdentityUserId = user.Id,
             });
             _dbContext.SaveChanges();

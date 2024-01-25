@@ -1,17 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using ugghhMagazine.Models;
+using UgghhMagazine.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace ugghhMagazine.Data;
+namespace UgghhMagazine.Data;
 public class UgghhMagazineDbContext : IdentityDbContext<IdentityUser>
 {
     private readonly IConfiguration _configuration;
-    // public DbSet<Bike> Bikes { get; set; }
-    // public DbSet<BikeType> BikeTypes { get; set; }
-    // public DbSet<WorkOrder> WorkOrders { get; set; }
-    // public DbSet<Owner> Owners { get; set; }
-    public DbSet<UserProfile>? UserProfiles { get; set; }
+    public DbSet<Category> Category { get; set; }
+    public DbSet<Likes> Likes { get; set; }
+    public DbSet<Post> Post { get; set; }
+    public DbSet<UserProfile> UserProfiles { get; set; }
 
     public UgghhMagazineDbContext(DbContextOptions<UgghhMagazineDbContext> context, IConfiguration config) : base(context)
     {

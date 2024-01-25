@@ -14,10 +14,8 @@ border: none;
 }
 
 .nav-logo{
-  width: 380px;
-
-
-
+  display: flex;
+  width: 200px;
 }
 .nav-itemDropDown{
   width:200px;
@@ -41,13 +39,14 @@ border: none;
 .userBox{
   align-self: center;
   margin-left: 5px;
-
+  
 }
 
 .logoBox{
   display:flex;
   justify-content: flex-start;
   align-self: center;
+  width:200px;
 }
 
 .userProfilePic {

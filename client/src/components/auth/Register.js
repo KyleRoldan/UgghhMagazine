@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { register } from "../../managers/authManager";
+import React, { useState } from "react";
+import { register } from "../../managers/AuthManager";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, FormFeedback, FormGroup, Input, Label } from "reactstrap";
 
 export default function Register({ setLoggedInUser }) {
   const [firstName, setFirstName] = useState("");
@@ -12,7 +11,7 @@ export default function Register({ setLoggedInUser }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [passwordMismatch, setPasswordMismatch] = useState();
+  const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [registrationFailure, setRegistrationFailure] = useState(false);
 
   const navigate = useNavigate();
@@ -45,60 +44,50 @@ export default function Register({ setLoggedInUser }) {
   return (
     <div className="container" style={{ maxWidth: "500px" }}>
       <h3>Sign Up</h3>
-      <FormGroup>
-        <Label>First Name</Label>
-        <Input
+      <div>
+        <label>First Name</label>
+        <input
           type="text"
           value={firstName}
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
+          onChange={(e) => setFirstName(e.target.value)}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label>Last Name</Label>
-        <Input
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
           type="text"
           value={lastName}
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
+          onChange={(e) => setLastName(e.target.value)}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label>Email</Label>
-        <Input
+      </div>
+      <div>
+        <label>Email</label>
+        <input
           type="email"
           value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
+          onChange={(e) => setEmail(e.target.value)}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label>User Name</Label>
-        <Input
+      </div>
+      <div>
+        <label>User Name</label>
+        <input
           type="text"
           value={userName}
-          onChange={(e) => {
-            setUserName(e.target.value);
-          }}
+          onChange={(e) => setUserName(e.target.value)}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label>Address</Label>
-        <Input
+      </div>
+      <div>
+        <label>Address</label>
+        <input
           type="text"
           value={address}
-          onChange={(e) => {
-            setAddress(e.target.value);
-          }}
+          onChange={(e) => setAddress(e.target.value)}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label>Password</Label>
-        <Input
-          invalid={passwordMismatch}
+      </div>
+      <div>
+        <label>Password</label>
+        <input
+          className={passwordMismatch ? "is-invalid" : ""}
           type="password"
           value={password}
           onChange={(e) => {
@@ -106,11 +95,11 @@ export default function Register({ setLoggedInUser }) {
             setPassword(e.target.value);
           }}
         />
-      </FormGroup>
-      <FormGroup>
-        <Label> Confirm Password</Label>
-        <Input
-          invalid={passwordMismatch}
+      </div>
+      <div>
+        <label>Confirm Password</label>
+        <input
+          className={passwordMismatch ? "is-invalid" : ""}
           type="password"
           value={confirmPassword}
           onChange={(e) => {
@@ -118,18 +107,20 @@ export default function Register({ setLoggedInUser }) {
             setConfirmPassword(e.target.value);
           }}
         />
-        <FormFeedback>Passwords do not match!</FormFeedback>
-      </FormGroup>
+        {passwordMismatch && (
+          <div style={{ color: "red" }}>Passwords do not match!</div>
+        )}
+      </div>
       <p style={{ color: "red" }} hidden={!registrationFailure}>
         Registration Failure
       </p>
-      <Button
-        color="primary"
+      <button
+        className="btn btn-primary"
         onClick={handleSubmit}
         disabled={passwordMismatch}
       >
         Register
-      </Button>
+      </button>
       <p>
         Already signed up? Log in <Link to="/login">here</Link>
       </p>
