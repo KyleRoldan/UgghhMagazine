@@ -72,22 +72,50 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
             <Link className='link-tag' to="/">
             <div className="dropdown-item" onClick={() => handleServiceClick(1)}>
             H
-            o
-            m
-            e
+            O 
+            M 
+            E
+            
             </div>
             </Link>
 
-            <Link className='link-tag' to="/addItem">
+            <Link className='link-tag' to="/opinion">
             <div className="dropdown-item" onClick={() => handleServiceClick(2)}>
-            A
-            d
-            d 
+           O
+           P
+           I
+           N
+           I
+           O
+           N
+            </div>
+            </Link>
 
-            I
-            t
-            e
-            m
+            <Link className='link-tag' to="/poetry">
+            <div className="dropdown-item" onClick={() => handleServiceClick(1)}>
+            P 
+            O  
+            E
+            T 
+            R 
+            Y 
+            </div>
+            </Link>
+
+
+            <Link className='link-tag' to="/shortstory">
+            <div className="dropdown-item" onClick={() => handleServiceClick(1)}>
+            S  
+            H  
+            O 
+            R 
+            T 
+            /  
+            S 
+            T 
+            O 
+            R 
+            Y
             </div>
             </Link>
 
@@ -109,7 +137,12 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
             >
               <div className="dropdown-item">
                 
-              Logout
+              L
+              O 
+              G 
+              O 
+              U 
+              T
 
               </div>
             </Link>

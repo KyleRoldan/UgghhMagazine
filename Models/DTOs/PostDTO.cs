@@ -6,7 +6,9 @@ namespace UgghhMagazine.Models.DTOs;
 public class PostDTO
 {
     public int Id { get; set; }
-    public int? Title { get; set; }
+    public string? Title { get; set; }
+
+    public string? Author { get; set; }
 
     public int? UserProfileId { get; set; }
     public UserProfile? UserProfile { get; set; }

@@ -50,6 +50,18 @@ public class UgghhMagazineDbContext : IdentityDbContext<IdentityUser>
             Address = "101 Main Street",
         });
 
+        modelBuilder.Entity<Category>().HasData(
+        new Category { Id = 1, Name = "Poetry" },
+        new Category { Id = 2, Name = "Short Story" },
+        new Category { Id = 3, Name = "Opinion" }
+    );
+
+     modelBuilder.Entity<Post>().HasData(
+        new Post { Id = 1, Title = "A Poem is Poetry", Author = "Author A", UserProfileId = 1, Date = DateTime.Now, CategoryId = 1, Content = "Exciting tech news!" },
+        new Post { Id = 2, Title = "A Short Story is Hard to Write",Author = "Author b", UserProfileId = 1, Date = DateTime.Now, CategoryId = 2, Content = "Latest fashion trends!" },
+        new Post { Id = 3, Title = "Travel Boom Leads to Gentrification",Author = "Author c", UserProfileId = 1, Date = DateTime.Now, CategoryId = 3, Content = "Amazing travel adventures!" }
+    );
+
         
     }
 }
