@@ -1,8 +1,22 @@
-.navbar{
-  display: flex;
-  justify-content: space-between;
-
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+     /* Adjust this value based on the height of your navbar */
 }
+
+.navbar {
+    overflow: hidden;
+    background-color: #fffef2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+   justify-content: space-between;
+   padding:10px;
+}
+
+
+
 .nav-Icon{
 width:25px;
 
@@ -57,7 +71,7 @@ border: none;
 
 .dropdown-content {
   flex-direction: column;
-  position:absolute; 
+  position:fixed; 
   top: 15%; 
   right:1%; 
   background-color:#fffef2;

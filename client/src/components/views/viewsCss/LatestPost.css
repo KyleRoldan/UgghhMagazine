@@ -94,6 +94,7 @@ font-size:normal;
 
 .categoryBox:hover{
 width: 100px;
+border-color: #FFFEF2;
 height:18px;
 background-color: #FF67BF;
 color:#FFFEF2;
@@ -111,8 +112,6 @@ box-shadow:5px 5px 0 #FF67BF
 
 border: .5px black solid;
 
-
-
 }
 
 .about-image-box{
@@ -120,14 +119,11 @@ border: .5px black solid;
     width: 500px; 
     /* border:2px dotted black; */
     margin: 50px 100px ;
-    
 
 }
 
 .aboutSecondary-box{
 width:45%;
-
-
 
 }
 
@@ -156,6 +152,7 @@ width:45%;
     letter-spacing: 3px;
     font-weight:450;
     font-style: italic;
+   
   }
 
 
@@ -164,10 +161,6 @@ width:45%;
 
 margin-top: 30px;
 height:700px;
-
-
-
-
 background-color: #0D537D;
 
 }
