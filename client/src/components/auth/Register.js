@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { register } from "../../managers/AuthManager";
 import { Link, useNavigate } from "react-router-dom";
+import "../auth/Auth.css";
 
 export default function Register({ setLoggedInUser }) {
   const [firstName, setFirstName] = useState("");

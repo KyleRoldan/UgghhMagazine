@@ -3,7 +3,7 @@ import "../views/viewsCss/LatestPost.css";
 import sampleImg from "../../assets/sampleImg.png";
 
 import { getPosts } from '../../managers/PostManager';
-import PostListPoetry from './post/PostListPoetry';
+import PostListPoetry from '../post/PostListPoetry';
 
 
 

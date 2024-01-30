@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
-import { getPosts } from "../../../managers/PostManager";
+import { getPosts } from "../../managers/PostManager";
 
 
 export default function PostListPoetry({ detailsPostId }) {

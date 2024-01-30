@@ -18,7 +18,7 @@ public class PostController : ControllerBase
         _dbContext = context;
     }
 
-[HttpGet]
+    [HttpGet]
 [Authorize]
 public IActionResult Get()
 {
@@ -58,7 +58,7 @@ public IActionResult UpdatePost(Post post, int id)
         return BadRequest();
     }
 
-    
+    postToUpdate.Id = post.Id;
     postToUpdate.Title = post.Title;
     postToUpdate.CategoryId = post.CategoryId;
     postToUpdate.Author = post.Author;
@@ -75,26 +75,38 @@ public IActionResult UpdatePost(Post post, int id)
 //   "author": "New Author Name"  // Replace with the new author name
 // }
 
+ [HttpPost]
+ [Authorize]
+public IActionResult CreatePostCard(Post post)
+{
+    
+    
+    post.Date= DateTime.Now;
 
 
+    _dbContext.Post.Add(post);
 
+    _dbContext.SaveChanges();
 
+    return Created($"/api/post{post.Id}", post);
+}
 
+[HttpDelete("{id}")]
+[Authorize]
+public IActionResult DeletePost(int id)
+{
+    Post postToDelete = _dbContext.Post.SingleOrDefault(p => p.Id == id);
+    
+    if (postToDelete == null)
+    {
+        return NotFound();
+    }
 
+    _dbContext.Post.Remove(postToDelete);
+    _dbContext.SaveChanges();
 
+    return NoContent();
+}
 
-
-
-// [HttpGet("inventory")]
-// [Authorize]
-// public IActionResult Inventory()
-// {
-//     int inventory = _dbContext
-//     .Bikes
-//     .Where(b => b.WorkOrders.Any(wo => wo.DateCompleted == null))
-//     .Count();
-
-//     return Ok(inventory);
-// }
 
 }

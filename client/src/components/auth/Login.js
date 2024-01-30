@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../managers/AuthManager";
+import "../auth/Auth.css";
 
 export default function Login({ setLoggedInUser }) {
   const navigate = useNavigate();

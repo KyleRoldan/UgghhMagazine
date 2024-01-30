@@ -3,7 +3,7 @@ import "../views/viewsCss/LatestPost.css";
 import sampleImg from "../../assets/sampleImg.png";
 
 import { getPosts } from '../../managers/PostManager';
-import PostListOpinion from './post/PostListOpinion';
+import PostListOpinion from '../post/PostListOpinion';
 
 export const OpinionView = () => {
     const [posts, setPosts] = useState(null);

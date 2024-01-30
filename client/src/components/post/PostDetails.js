@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import "../../views/viewsCss/LatestPost.css";
-import { getPostById } from "../../../managers/PostManager";
+import "../views/viewsCss/LatestPost.css"
+
 import { Link, useParams } from "react-router-dom";
+import { getPostById } from "../../managers/PostManager";
 
 export default function PostDetails() {
   const { id } = useParams();
@@ -12,7 +13,9 @@ export default function PostDetails() {
 
   useEffect(() => {
         getPostById(id).then(setPost);
+
        }, [id]);
+       
 
   if (!post) {
     return (
@@ -40,7 +43,14 @@ export default function PostDetails() {
               <button >
                     Edit
                   </button></Link>
-                </div>
+      </div>
+
+    
+
+
+
+
+
       <div>
         <div>
 

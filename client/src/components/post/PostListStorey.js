@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-
-
 import PostCard from "./PostCard";
-import { getPosts } from "../../../managers/PostManager";
+import { getPosts } from "../../managers/PostManager";
 
 
-export default function PostListOpinion({ detailsPostId }) {
+export default function PostListStorey({ detailsPostId }) {
   const [posts, setPosts] = useState([]);
 
   const getAllPosts = () => {
@@ -20,8 +18,8 @@ export default function PostListOpinion({ detailsPostId }) {
   return (
     <>
       {posts.map((post) => {
-        // Check if the post has a category name of "opinion"
-        if (post.category.name === "Opinion") {
+        // Check if the post has a category name of "Short Storey"
+        if (post.category.name === "Short Story") {
           return (
             <PostCard
               post={post}

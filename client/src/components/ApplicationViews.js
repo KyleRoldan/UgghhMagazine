@@ -7,8 +7,9 @@ import { OpinionView } from "./views/OpinionView";
 import { PoetryView, WrittenWordView } from "./views/PoetryView";
 import { ShortStoryView } from "./views/ShortStoryView";
 import { LatestPostView } from "./views/LatestPostView";
-import PostDetails from "./views/post/PostDetails";
-import EditPost from "./views/post/edit/EditPost";
+import PostDetails from "./post/PostDetails";
+import EditPost from "./post/edit/EditPost";
+import CreatePost from "./post/create/CreatePost";
 
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
@@ -69,6 +70,16 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
         element={
           <AuthorizedRoute loggedInUser={loggedInUser}>
             <EditPost />
+          </AuthorizedRoute>
+        }
+      />
+      <Route path="*" element={<p>Whoops, nothing here...</p>} />
+
+      <Route
+        path="/createPost"
+        element={
+          <AuthorizedRoute loggedInUser={loggedInUser}>
+            <CreatePost />
           </AuthorizedRoute>
         }
       />

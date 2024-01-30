@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { editPosts, getPostById,  } from "../../../../managers/PostManager";
-import { getCategories } from "../../../../managers/CategoryManager";
-import "../../../views/viewsCss/LatestPost.css";
+import { deletePost, editPosts, getPostById,  } from "../../../managers/PostManager";
+import { getCategories } from "../../../managers/CategoryManager";
+import "../../views/viewsCss/LatestPost.css"
+import Modal from "./Modal";
 
 export default function EditPost() {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ export default function EditPost() {
 
   const [post, setPost] = useState({ title: "", author: "", content: "", categoryId: null });
   const [categories, setCategories] = useState([]);
+  const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+
 
   useEffect(() => {
     getPostById(id).then((data) => {
@@ -20,7 +23,7 @@ export default function EditPost() {
   }, [id]);
 
   useEffect(() => {
-    
+    // Fetch categories and set them
     getCategories().then((categories) => setCategories(categories));
   }, []);
 
@@ -37,9 +40,9 @@ export default function EditPost() {
   };
 
   const submit = () => {
-    const { title, categoryId, content, author } = post; 
+    const { id, title, categoryId, content, author } = post; 
     const updatedPost = {
-      
+      id,
       title,
       categoryId,
       content,
@@ -51,6 +54,26 @@ export default function EditPost() {
     editPosts(updatedPost).then(() => {
       navigate(`/post/${id}`);
     });
+  };
+
+
+
+  const handleDelete = () => {
+    setDeleteModalOpen(true);
+  };
+
+
+  const handleDeleteConfirm = () => {
+      deletePost(id).then(() => {
+        setDeleteModalOpen(false);
+        navigate("/");
+      });
+    
+  };
+
+  const handleDeleteCancel = () => {
+    // Cancel the delete operation
+    setDeleteModalOpen(false);
   };
   
 
@@ -69,6 +92,8 @@ export default function EditPost() {
             onChange={handleInputChange}
           />
         </div>
+
+       
 
         <div>
           <label htmlFor="author">Author</label>
@@ -108,8 +133,29 @@ export default function EditPost() {
           </select>
         </div>
 
-        <button onClick={submit}>Submit</button>
+        <button onClick={submit}>Submit Edits</button>
+
+
+        <button onClick={handleDelete}>Delete Post</button>
+
+      {isDeleteModalOpen && (
+        <Modal
+          title="Confirm Delete"
+          message="You are about to delete a post. Are you sure?"
+          onConfirm={handleDeleteConfirm}
+          onCancel={handleDeleteCancel}
+        />
+      )}
+        
+
       </div>
+
+
+      
+
+
     </div>
   );
 }
+
+

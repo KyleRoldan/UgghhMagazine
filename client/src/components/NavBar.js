@@ -119,6 +119,22 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
             </div>
             </Link>
 
+            <Link className='link-tag' to="/createPost">
+            <div className="dropdown-item" onClick={() => handleServiceClick(1)}>
+            C  
+            R  
+            E 
+            A 
+            T 
+            E  
+             
+            P 
+            O 
+            S 
+            T
+            </div>
+            </Link>
+
 
 
 

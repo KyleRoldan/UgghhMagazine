@@ -1,7 +1,8 @@
 // PostCard.js
 import React from "react";
 import { Link } from "react-router-dom";
-import sampleImg from "../../../assets/sampleImg.png";
+import sampleImg from "../../assets/sampleImg.png";
+
 
 export default function PostCard({ post }) {
   return (

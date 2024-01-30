@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../views/viewsCss/LatestPost.css";
 import sampleImg from "../../assets/sampleImg.png";
-import PostList from './post/PostList';
+import PostList from '../post/PostList';
 
 export const LatestPostView = () => {
     // const [detailsPostId, setDetailsPostId] = useState(null);
