@@ -38,9 +38,9 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
 
     <div className="userProfilePic-box">
                  {/* <img className="userProfilePic" alt="User Profile Pic" src={navIconImage}/> */}
-                Hey,
+                temporaryuser@gmail.com
             </div>
-        <div className="userBox"> ???? </div>
+        <div className="userBox">  </div>
      </div>
 
 

@@ -6,13 +6,14 @@ body {
 
 .navbar {
     overflow: hidden;
-    background-color: #fffef2;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
    justify-content: space-between;
    padding:10px;
+   margin-bottom: 20px;
 }
 
 
@@ -74,7 +75,7 @@ border: none;
   position:fixed; 
   top: 15%; 
   right:1%; 
-  background-color:#fffef2;
+  background-color:#ffffff;
   text-decoration: none;
 
   min-width: 160px;

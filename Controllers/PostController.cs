@@ -18,7 +18,7 @@ public class PostController : ControllerBase
         _dbContext = context;
     }
 
-    [HttpGet]
+[HttpGet]
 [Authorize]
 public IActionResult Get()
 {
@@ -43,6 +43,47 @@ public IActionResult GetById(int id)
 
     return Ok(post);
 }
+
+[HttpPut("{id}")]
+[Authorize]
+public IActionResult UpdatePost(Post post, int id)
+{
+    Post postToUpdate = _dbContext.Post.SingleOrDefault(p => p.Id == id);
+    if (postToUpdate == null)
+    {
+        return NotFound();
+    }
+    else if (id != post.Id)
+    {
+        return BadRequest();
+    }
+
+    
+    postToUpdate.Title = post.Title;
+    postToUpdate.CategoryId = post.CategoryId;
+    postToUpdate.Author = post.Author;
+    postToUpdate.Content = post.Content;
+
+    _dbContext.SaveChanges();
+
+    return NoContent();
+}
+// {
+//   "id": 123,  // Replace with the actual post ID you want to update
+//   "categoryId": 1,  // Replace with the new category ID
+//   "date": "2024-01-30T12:00",  // Replace with the new date
+//   "author": "New Author Name"  // Replace with the new author name
+// }
+
+
+
+
+
+
+
+
+
+
 
 // [HttpGet("inventory")]
 // [Authorize]
