@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using UgghhMagazine.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Routing.Tree;
 
 namespace UgghhMagazine.Data;
 public class UgghhMagazineDbContext : IdentityDbContext<IdentityUser>
@@ -41,7 +42,8 @@ public class UgghhMagazineDbContext : IdentityDbContext<IdentityUser>
             RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
             UserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f"
         });
-        modelBuilder.Entity<UserProfile>().HasData(new UserProfile
+        modelBuilder.Entity<UserProfile>().HasData(
+            new UserProfile
         {
             Id = 1,
             IdentityUserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",

@@ -18,15 +18,18 @@ export default function PostList({ detailsPostId }) {
     getAllPosts();
   }, []);
   return (
+
     <>
       
       {posts.map((post) => (
+        
         <PostCard
           post={post}
           posts={posts}
           detailsPostId={detailsPostId}
           key={`post-${post.id}`}
         ></PostCard>
+
       ))}
     </>
   );

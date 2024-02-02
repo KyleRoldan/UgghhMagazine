@@ -23,12 +23,14 @@ export default function PostListOpinion({ detailsPostId }) {
         // Check if the post has a category name of "opinion"
         if (post.category.name === "Opinion") {
           return (
+
             <PostCard
               post={post}
               posts={posts}
               detailsPostId={detailsPostId}
               key={`post-${post.id}`}
             ></PostCard>
+            
           );
         }
         // If not, return null (or an empty fragment) to skip rendering

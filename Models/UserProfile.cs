@@ -15,7 +15,9 @@ public class UserProfile
 
      public string? UserName { get; set; }
 
-     public string? IsAdmin { get; set; }
+   
+
+     public List<Likes>? Likes { get; set; }
 
      public List<string>? Roles { get; set; }
 

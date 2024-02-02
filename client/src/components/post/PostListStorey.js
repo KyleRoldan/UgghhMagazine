@@ -21,12 +21,14 @@ export default function PostListStorey({ detailsPostId }) {
         // Check if the post has a category name of "Short Storey"
         if (post.category.name === "Short Story") {
           return (
+
             <PostCard
               post={post}
               posts={posts}
               detailsPostId={detailsPostId}
               key={`post-${post.id}`}
             ></PostCard>
+            
           );
         }
         // If not, return null (or an empty fragment) to skip rendering

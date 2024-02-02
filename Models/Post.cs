@@ -22,6 +22,8 @@ public class Post
     public string? Content { get; set; }
     public IdentityUser? IdentityUser { get; set; }
 
+    public List <Likes>? Likes { get; set; }
+
     
 }
 

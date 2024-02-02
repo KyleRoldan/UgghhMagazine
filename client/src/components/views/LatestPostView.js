@@ -38,8 +38,9 @@ export const LatestPostView = () => {
                             {/* Pass setDetailsPostId to PostList */}
                             <PostList />
                         </div>
-                        
-                    </div>
+
+                
+                        </div>
                 </div>
             </div>
         </>

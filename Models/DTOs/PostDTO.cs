@@ -22,5 +22,7 @@ public class PostDTO
     public string? Content { get; set; }
     public IdentityUser? IdentityUser { get; set; }
 
+    public List <Likes>? Likes { get; set; }
+
     
 }

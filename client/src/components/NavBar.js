@@ -26,6 +26,12 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
     setOpen(false);
   };
 
+  // Check if the loggedInUser is the author of the post
+ 
+
+  // Check if the loggedInUser has the "Admin" role
+  const isAdmin = loggedInUser && loggedInUser.roles && loggedInUser.roles.includes("Admin");
+
   
 
   return (
@@ -38,7 +44,7 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
 
     <div className="userProfilePic-box">
                  {/* <img className="userProfilePic" alt="User Profile Pic" src={navIconImage}/> */}
-                temporaryuser@gmail.com
+              Hey, {loggedInUser.userName}
             </div>
         <div className="userBox">  </div>
      </div>
@@ -119,6 +125,7 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
             </div>
             </Link>
 
+            {isAdmin && (
             <Link className='link-tag' to="/createPost">
             <div className="dropdown-item" onClick={() => handleServiceClick(1)}>
             C  
@@ -134,7 +141,7 @@ export default function MyDiv({ loggedInUser, setLoggedInUser }) {
             T
             </div>
             </Link>
-
+            )}
 
 
 

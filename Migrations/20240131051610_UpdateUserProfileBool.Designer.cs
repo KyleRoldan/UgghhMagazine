@@ -3,18 +3,20 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using UgghhMagazine.Data;
 
 #nullable disable
 
-namespace UgghhMagazine.Migrations
+namespace ugghhMagazine.Migrations
 {
     [DbContext(typeof(UgghhMagazineDbContext))]
-    partial class UgghhMagazineDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240131051610_UpdateUserProfileBool")]
+    partial class UpdateUserProfileBool
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +54,7 @@ namespace UgghhMagazine.Migrations
                         new
                         {
                             Id = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
-                            ConcurrencyStamp = "763be343-e3bb-45d0-85f4-60fe25b7dca2",
+                            ConcurrencyStamp = "bf02e56b-9be5-4c8f-b455-fbb0bedb3a73",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });
@@ -151,13 +153,13 @@ namespace UgghhMagazine.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "27defba9-b83d-4a11-8ef2-7129b8189089",
+                            ConcurrencyStamp = "d97b3ab0-a500-43d2-a461-e8086070444a",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEB7usTTVRbSNJsZSil9dR0k2DtmjPMaqfE+5wXSHJgXqKUHHAuvBdud4ooh8SfLg7A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBb9qfGu11N+T4Ct8VHMDFlkk1cQB6E7CG/Z4ruDUC4+/JH81NstIxdldf4/f9hjRw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b50472d5-8650-471b-8915-51a0aa8c3636",
+                            SecurityStamp = "6093a961-229f-40b6-bdb6-57d9a2f1468a",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         });
@@ -356,7 +358,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Author A",
                             CategoryId = 1,
                             Content = "Exciting tech news!",
-                            Date = new DateTime(2024, 1, 27, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4010),
+                            Date = new DateTime(2024, 1, 26, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2640),
                             Title = "A Poem is Poetry",
                             UserProfileId = 1
                         },
@@ -366,7 +368,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Author B",
                             CategoryId = 2,
                             Content = "Latest fashion trends!",
-                            Date = new DateTime(2024, 1, 22, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4060),
+                            Date = new DateTime(2024, 1, 21, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2690),
                             Title = "A Short Story is Hard to Write",
                             UserProfileId = 1
                         },
@@ -376,7 +378,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Author C",
                             CategoryId = 3,
                             Content = "Amazing travel adventures!",
-                            Date = new DateTime(2024, 1, 17, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4060),
+                            Date = new DateTime(2024, 1, 16, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2690),
                             Title = "Travel Boom Leads to Gentrification",
                             UserProfileId = 1
                         },
@@ -386,7 +388,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Pizza Lover",
                             CategoryId = 1,
                             Content = "Exploring the pizza world!",
-                            Date = new DateTime(2024, 1, 25, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4060),
+                            Date = new DateTime(2024, 1, 24, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2700),
                             Title = "The Quest for the Perfect Pizza",
                             UserProfileId = 1
                         },
@@ -396,7 +398,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Tech Dancer",
                             CategoryId = 2,
                             Content = "Innovative dance moves with robots!",
-                            Date = new DateTime(2024, 1, 20, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4060),
+                            Date = new DateTime(2024, 1, 19, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2700),
                             Title = "Dancing with Robots",
                             UserProfileId = 1
                         },
@@ -406,7 +408,7 @@ namespace UgghhMagazine.Migrations
                             Author = "VR Artist",
                             CategoryId = 3,
                             Content = "Immersive art experiences!",
-                            Date = new DateTime(2024, 1, 12, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4070),
+                            Date = new DateTime(2024, 1, 11, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2700),
                             Title = "Surreal Paintings in Virtual Reality",
                             UserProfileId = 1
                         },
@@ -416,7 +418,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Aqua Weaver",
                             CategoryId = 1,
                             Content = "Unique aquatic crafting!",
-                            Date = new DateTime(2024, 1, 24, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4070),
+                            Date = new DateTime(2024, 1, 23, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2710),
                             Title = "Adventures in Underwater Basket Weaving",
                             UserProfileId = 1
                         },
@@ -426,7 +428,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Fort Architect",
                             CategoryId = 2,
                             Content = "Building the ultimate pillow fortress!",
-                            Date = new DateTime(2024, 1, 14, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4070),
+                            Date = new DateTime(2024, 1, 13, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2710),
                             Title = "Epic Pillow Fort Construction",
                             UserProfileId = 1
                         },
@@ -436,7 +438,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Sock Scientist",
                             CategoryId = 3,
                             Content = "Unraveling the mysteries of sock pairs!",
-                            Date = new DateTime(2024, 1, 18, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4070),
+                            Date = new DateTime(2024, 1, 17, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2710),
                             Title = "The Science of Sock Matching",
                             UserProfileId = 1
                         },
@@ -446,7 +448,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Budget Astronaut",
                             CategoryId = 1,
                             Content = "Exploring the cosmos without breaking the bank!",
-                            Date = new DateTime(2024, 1, 21, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4080),
+                            Date = new DateTime(2024, 1, 20, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2710),
                             Title = "Space Travel on a Budget",
                             UserProfileId = 1
                         },
@@ -456,7 +458,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Chef Chronos",
                             CategoryId = 2,
                             Content = "Cooking across different eras!",
-                            Date = new DateTime(2024, 1, 15, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4080),
+                            Date = new DateTime(2024, 1, 14, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2720),
                             Title = "Time-Traveling Cookbook Adventures",
                             UserProfileId = 1
                         },
@@ -466,7 +468,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Ink Detective",
                             CategoryId = 3,
                             Content = "Unveiling hidden messages!",
-                            Date = new DateTime(2024, 1, 23, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4080),
+                            Date = new DateTime(2024, 1, 22, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2720),
                             Title = "Secrets of Invisible Ink",
                             UserProfileId = 1
                         },
@@ -476,7 +478,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Paper Pilot",
                             CategoryId = 1,
                             Content = "Achieving new heights with paper airplanes!",
-                            Date = new DateTime(2024, 1, 19, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4080),
+                            Date = new DateTime(2024, 1, 18, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2720),
                             Title = "World Record for Paper Airplane Flight",
                             UserProfileId = 1
                         },
@@ -486,7 +488,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Zero-G Juggler",
                             CategoryId = 2,
                             Content = "Juggling feats in outer space!",
-                            Date = new DateTime(2024, 1, 16, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4090),
+                            Date = new DateTime(2024, 1, 15, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2730),
                             Title = "Extreme Juggling in Zero Gravity",
                             UserProfileId = 1
                         },
@@ -496,7 +498,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Entomophagist",
                             CategoryId = 3,
                             Content = "Culinary adventures with insects!",
-                            Date = new DateTime(2024, 1, 13, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4090),
+                            Date = new DateTime(2024, 1, 12, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2730),
                             Title = "Gourmet Insect Tasting",
                             UserProfileId = 1
                         },
@@ -506,7 +508,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Avian Adrenaline Junkie",
                             CategoryId = 1,
                             Content = "Soaring through the skies with birds!",
-                            Date = new DateTime(2024, 1, 11, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4090),
+                            Date = new DateTime(2024, 1, 10, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2730),
                             Title = "Skydiving with Feathered Friends",
                             UserProfileId = 1
                         },
@@ -516,7 +518,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Extraterrestrial Dancer",
                             CategoryId = 2,
                             Content = "Interstellar dance language!",
-                            Date = new DateTime(2024, 1, 26, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4090),
+                            Date = new DateTime(2024, 1, 25, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2730),
                             Title = "Alien Communication through Dance",
                             UserProfileId = 1
                         },
@@ -526,7 +528,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Quantum Baker",
                             CategoryId = 3,
                             Content = "Baking with a quantum twist!",
-                            Date = new DateTime(2024, 1, 10, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4100),
+                            Date = new DateTime(2024, 1, 9, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2740),
                             Title = "Mysteries of Quantum Baking",
                             UserProfileId = 1
                         },
@@ -536,7 +538,7 @@ namespace UgghhMagazine.Migrations
                             Author = "Unicorn Enthusiast",
                             CategoryId = 1,
                             Content = "Seek",
-                            Date = new DateTime(2024, 1, 9, 15, 52, 52, 723, DateTimeKind.Local).AddTicks(4100),
+                            Date = new DateTime(2024, 1, 8, 0, 16, 9, 748, DateTimeKind.Local).AddTicks(2740),
                             Title = "Unicorn Tracking Expeditions",
                             UserProfileId = 1
                         });
