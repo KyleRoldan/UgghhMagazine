@@ -56,9 +56,13 @@ public class UgghhMagazineDbContext : IdentityDbContext<IdentityUser>
         new Category { Id = 1, Name = "Poetry" },
         new Category { Id = 2, Name = "Short Story" },
         new Category { Id = 3, Name = "Opinion" }
-    );
+        );
 
-     modelBuilder.Entity<Post>().HasData(
+
+
+
+
+        modelBuilder.Entity<Post>().HasData(
         new Post { Id = 1, Title = "A Poem is Poetry", Author = "Author A", UserProfileId = 1, Date = DateTime.Now.AddDays(-5), CategoryId = 1, Content = "Exciting tech news!" },
         new Post { Id = 2, Title = "A Short Story is Hard to Write", Author = "Author B", UserProfileId = 1, Date = DateTime.Now.AddDays(-10), CategoryId = 2, Content = "Latest fashion trends!" },
         new Post { Id = 3, Title = "Travel Boom Leads to Gentrification", Author = "Author C", UserProfileId = 1, Date = DateTime.Now.AddDays(-15), CategoryId = 3, Content = "Amazing travel adventures!" },
@@ -79,6 +83,15 @@ public class UgghhMagazineDbContext : IdentityDbContext<IdentityUser>
         new Post { Id = 18, Title = "Mysteries of Quantum Baking", Author = "Quantum Baker", UserProfileId = 1, Date = DateTime.Now.AddDays(-22), CategoryId = 3, Content = "Baking with a quantum twist!" },
         new Post { Id = 19, Title = "Unicorn Tracking Expeditions", Author = "Unicorn Enthusiast", UserProfileId = 1, Date = DateTime.Now.AddDays(-23), CategoryId = 1, Content = "Seek"}
     );
+
+
+         modelBuilder.Entity<Likes>().HasData(
+        new Likes { Id = 1, UserProfileId = 1, PostId = 1 }, 
+        new Likes { Id = 2, UserProfileId = 1, PostId = 3 },  
+        new Likes { Id = 3, UserProfileId = 1, PostId = 5 }   
+        );
+
+         
 
         
     }

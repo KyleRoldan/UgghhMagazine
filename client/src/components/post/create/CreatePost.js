@@ -23,10 +23,11 @@ export default function CreatePost({ loggedInUser }) {
       content,
       author,
       title,
+      
     };
 
-    // Assuming you have a CreatePost function to create a new post
-    createPosts(newPost).then(() => {
+    
+    createPosts(newPost,loggedInUser).then(() => {
       navigate("/");
     });
 
@@ -36,9 +37,10 @@ export default function CreatePost({ loggedInUser }) {
   };
 
   useEffect(() => {
-    // Fetch posts and set them
-    getCategories().then((category) => setCategories(category));
-  }, []); // Make sure to pass an empty dependency array to useEffect
+   
+  getCategories().then((category) => setCategories(category));
+
+  }, []); 
 
   return (
     <>

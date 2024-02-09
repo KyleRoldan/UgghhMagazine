@@ -21,8 +21,10 @@ export default function PostList({ detailsPostId }) {
 
     <>
       
-      {posts.map((post) => (
-        
+      {posts
+      .slice(0,4)
+      .map((post) => (
+
         <PostCard
           post={post}
           posts={posts}

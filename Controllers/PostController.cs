@@ -18,7 +18,7 @@ public class PostController : ControllerBase
         _dbContext = context;
     }
 
-    [HttpGet]
+[HttpGet]
 [Authorize]
 public IActionResult Get()
 {
@@ -75,6 +75,8 @@ public IActionResult UpdatePost(Post post, int id)
 //   "author": "New Author Name"  // Replace with the new author name
 // }
 
+
+
  [HttpPost]
  [Authorize]
 public IActionResult CreatePostCard(Post post)
@@ -90,6 +92,11 @@ public IActionResult CreatePostCard(Post post)
 
     return Created($"/api/post{post.Id}", post);
 }
+
+
+
+
+
 
 [HttpDelete("{id}")]
 [Authorize]
@@ -108,7 +115,35 @@ public IActionResult DeletePost(int id)
     return NoContent();
 }
 
+[HttpGet("withLikes")]
+[Authorize]
+public IActionResult GetWithLikes()
+{
+    var postsWithLikes = _dbContext.Post
+        .Include(p => p.Likes)
+        .Select(p => new PostDTO
+        {
+            Id = p.Id,
+            Title = p.Title,
+            Author = p.Author,
+            UserProfileId = p.UserProfileId,
+            Date = p.Date,
+            CategoryId = p.CategoryId,
+            Content = p.Content,
+            IdentityUser = p.IdentityUser,
+            Likes = p.Likes.Select(l => new LikesDTO
+            {
+                Id = l.Id,
+                UserProfileId = l.UserProfileId,
+                UserProfile = l.UserProfile, // Include UserProfile in LikesDTO if needed
+                PostId = l.PostId,
+                Post = l.Post // Include Post in LikesDTO if needed
+            }).ToList()
+        })
+        .ToList();
 
+    return Ok(postsWithLikes);
+}
 
 
 }

@@ -1,7 +1,79 @@
-.container{
 
-margin-top: 100px;
+.loginContainer {   
+    background-image: url('../../assets/loginBackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+    width: 100vw; 
+}
+
+.login-circle {
+    padding-right: 400px;  
+}
+
+.login-button{
+padding-top: 320px;
+padding-left: 100px;
+
+}
+
+/* .navbar {
+    display: none; 
+} */
+
+.email-input{
+margin-top: 40px;
+margin-bottom: 15px;
+}
+
+.email-input input {
+    background: transparent;
+    text-align: center;
+    border: 1px solid #FFFFF2;
+    padding: 18px 60px;
+    color:#FFFFF2;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.email-input input.is-invalid {
+    /* Additional styles for the input when it has the class 'is-invalid' */
+    border-color: red; /* Example: border color changes to red */
+}
+
+.password-input input {
+  background: transparent;
+  text-align: center;
+  /* backdrop-filter: blur(5px); */
+    border: 1px solid #FFFFF2;
+    padding: 18px 60px;
+    color:#FFFFF2;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.password-input input.is-invalid {
+    /* Additional styles for the input when it has the class 'is-invalid' */
+    border-color: red; /* Example: border color changes to red */
+}
+
+.login-register-link{
+    margin-top: 50px;
+text-align: center;
+text-decoration: none;
 
 
 
 }
+
+.email-input input::placeholder,
+.password-input input::placeholder {
+    color: #FFFFF2; /* Change placeholder color */
+}
+
+

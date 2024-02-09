@@ -22,13 +22,22 @@ export default function Login({ setLoggedInUser }) {
   };
 
   return (
-    <div className="container" style={{ maxWidth: "500px" }}>
-      <h3>Login</h3>
-      <div>
-        <label>Email</label>
+    <div className="loginContainer">
+<div className="login-button">
+
+      <button className="btn btn-primary" onClick={handleSubmit}>
+        Login
+      </button>
+      
+      </div>
+    <div className="login-circle">
+     
+
+      <div className="email-input">
         <input
           className={failedLogin ? "is-invalid" : ""}
           type="text"
+          placeholder="Email"
           value={email}
           onChange={(e) => {
             setFailedLogin(false);
@@ -36,11 +45,13 @@ export default function Login({ setLoggedInUser }) {
           }}
         />
       </div>
-      <div>
-        <label>Password</label>
+
+
+      <div className="password-input">
         <input
           className={failedLogin ? "is-invalid" : ""}
           type="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => {
             setFailedLogin(false);
@@ -50,12 +61,24 @@ export default function Login({ setLoggedInUser }) {
         {failedLogin && <div className="invalid-feedback">Login failed.</div>}
       </div>
 
-      <button className="btn btn-primary" onClick={handleSubmit}>
-        Login
-      </button>
-      <p>
-        Not signed up? Register <Link to="/register">here</Link>
-      </p>
+      
+
+      <div className="login-register-link">
+      <Link  to="/register">REGISTER</Link>
+      </div>
+      
+      
+      
+      
+      </div>
+
+
+
     </div>
+
+
+
+
+
   );
 }

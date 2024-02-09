@@ -6,14 +6,14 @@ import sampleImg from "../../assets/sampleImg.png";
 
 export default function PostCard({ post }) {
   return (
-    <div className="aboutSecondary-box">
+    <div className="about-box">
       <Link to={`/post/${post.id}`}>
         <img className="aboutimg" src={sampleImg} alt="logo" />
       </Link>
-      <div className="infoSecondaryBox">
-        <div className="categorySecondaryBox">{post.category.name}</div>
+      <div className="infoBox">
+        <div className="categoryBox">{post.category.name}</div>
       </div>
-      <div className="titleSecondaryBox">
+      <div className="titleBox">
         <p>{post.title}</p>
       </div>
     </div>

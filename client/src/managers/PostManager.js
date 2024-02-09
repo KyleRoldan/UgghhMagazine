@@ -20,10 +20,13 @@ export const getPostsByCategory = (categoryName) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(updatedPost),
-    }).then((res) => res.json());
+    })
   };
 
   export const createPosts = (post) => {
+    
+    
+  
     return fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -42,6 +45,8 @@ export const getPostsByCategory = (categoryName) => {
   });
 };
 
- 
+export const getPostsWithLikes = () => {
+    return fetch(apiUrl + "/withLikes").then((res) => res.json());
+  };
 
   

@@ -6,11 +6,14 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import ApplicationViews from "./components/ApplicationViews";
 import { tryGetLoggedInUser } from "./managers/AuthManager";
+import { useLocation } from "react-router-dom";
 
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState();
+  const location = useLocation();
 
+  
   useEffect(() => {
     // user will be null if not authenticated
     tryGetLoggedInUser().then((user) => {
@@ -24,10 +27,14 @@ function App() {
     return <p>Loading...</p>;
   }
 
+  const isLoginPage = location.pathname === "/login";
 
   return (
     <>
-      <NavBar loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
+      {/* Render NavBar only if it's not the login page */}
+      {!isLoginPage && (
+        <NavBar loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
+      )}
       <ApplicationViews
         loggedInUser={loggedInUser}
         setLoggedInUser={setLoggedInUser}

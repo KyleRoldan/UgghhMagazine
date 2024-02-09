@@ -4,7 +4,7 @@ import { AuthorizedRoute } from "./auth/AuthorizedRoute";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import { OpinionView } from "./views/OpinionView";
-import { PoetryView, WrittenWordView } from "./views/PoetryView";
+import { PoetryView} from "./views/PoetryView";
 import { ShortStoryView } from "./views/ShortStoryView";
 import { LatestPostView } from "./views/LatestPostView";
 import PostDetails from "./post/PostDetails";

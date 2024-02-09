@@ -14,8 +14,9 @@ public class UserProfileDTO
     public string? UserName { get; set; }
 
    
-public List<Likes>? Likes { get; set; }
+public List<LikesDTO>? Likes { get; set; }
    
+   public string? IsAdmin { get; set; }
 
     public List<string>? Roles { get; set; }
 

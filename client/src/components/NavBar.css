@@ -7,20 +7,22 @@ body {
 .navbar {
     overflow: hidden;
     background: transparent;
-    background-color: #FFFFF2;
+    /* background-color: #FFFFF2; */
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
    justify-content: space-between;
    padding:10px;
+
+   
    
 }
 
 
 
 .nav-Icon{
-width:25px;
+width:35px;
 
 
 }
@@ -31,7 +33,7 @@ border: none;
 
 .nav-logo{
   display: flex;
-  width: 200px;
+  width: 278px;
 }
 .nav-itemDropDown{
   width:200px;
@@ -76,7 +78,7 @@ border: none;
   position:fixed; 
   top: 15%; 
   right:1%; 
-  background-color:#ffffff;
+  background-color:#FFFFF2;
   text-decoration: none;
 
   min-width: 160px;

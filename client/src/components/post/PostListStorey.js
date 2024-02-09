@@ -17,23 +17,18 @@ export default function PostListStorey({ detailsPostId }) {
   }, []);
   return (
     <>
-      {posts.map((post) => {
-        // Check if the post has a category name of "Short Storey"
-        if (post.category.name === "Short Story") {
-          return (
+      {posts
+    .filter(post => post.category.name === "Short Story")
+    .slice(0, 4)
+    .map(post => (
+    <PostCard
+      post={post}
+      posts={posts}
+      detailsPostId={detailsPostId}
+      key={`post-${post.id}`}
+    ></PostCard>
+  ))}
 
-            <PostCard
-              post={post}
-              posts={posts}
-              detailsPostId={detailsPostId}
-              key={`post-${post.id}`}
-            ></PostCard>
-            
-          );
-        }
-        // If not, return null (or an empty fragment) to skip rendering
-        return null;
-      })}
     </>
   );
 }
