@@ -43,76 +43,10 @@ export default function Register({ setLoggedInUser }) {
   };
 
   return (
-    <div className="container" style={{ maxWidth: "500px" }}>
-      <h3>Sign Up</h3>
-      <div>
-        <label>First Name</label>
-        <input
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Last Name</label>
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>User Name</label>
-        <input
-          type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Address</label>
-        <input
-          type="text"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          className={passwordMismatch ? "is-invalid" : ""}
-          type="password"
-          value={password}
-          onChange={(e) => {
-            setPasswordMismatch(false);
-            setPassword(e.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <label>Confirm Password</label>
-        <input
-          className={passwordMismatch ? "is-invalid" : ""}
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => {
-            setPasswordMismatch(false);
-            setConfirmPassword(e.target.value);
-          }}
-        />
-        {passwordMismatch && (
-          <div style={{ color: "red" }}>Passwords do not match!</div>
-        )}
-      </div>
-      <p style={{ color: "red" }} hidden={!registrationFailure}>
+    <div className="registerContainer">
+      <div className="innerRegisterContainer">
+        <div className="innerRegisterTop">
+        <p style={{ color: "red" }} hidden={!registrationFailure}>
         Registration Failure
       </p>
       <button
@@ -125,6 +59,78 @@ export default function Register({ setLoggedInUser }) {
       <p>
         Already signed up? Log in <Link to="/login">here</Link>
       </p>
+        </div>
+        <div className="innerRegisterBottom">
+      <h3>Sign Up</h3>
+      <div className="email-input-two">
+        <input
+          type="text"
+          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+      </div>
+      <div className="email-input-two">
+        <input
+          type="text"
+          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+      </div>
+      <div className="email-input-two">
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="email-input-two">
+        <input
+          type="text"
+          placeholder="User Name"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+      </div>
+      <div className="email-input-two">
+        <input
+          type="text"
+          placeholder="Address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+      </div>
+      <div className="email-input-two">
+        <input
+          className={passwordMismatch ? "is-invalid" : ""}
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => {
+            setPasswordMismatch(false);
+            setPassword(e.target.value);
+          }}
+        />
+      </div>
+      <div className="email-input-two">
+        <input
+          className={passwordMismatch ? "is-invalid" : ""}
+          placeholder="Confirm Password"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => {
+            setPasswordMismatch(false);
+            setConfirmPassword(e.target.value);
+          }}
+        />
+        {passwordMismatch && (
+          <div style={{ color: "red" }}>Passwords do not match!</div>
+        )}
+      </div>
+        </div>
+      </div>
     </div>
   );
 }

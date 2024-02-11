@@ -13,7 +13,7 @@
 }
 
 .login-circle {
-    padding-right: 400px;  
+    padding-right: 425px;  
 }
 
 .login-button{
@@ -41,7 +41,26 @@ margin-bottom: 15px;
     font-weight: bold;
 }
 
+.email-input-two{
+    margin-top: 10px;
+    }
+    
+    .email-input-two input {
+        background: transparent;
+        text-align: center;
+        border: 1px solid #000000;
+        padding: 9px 30px;
+        color:#FFFFF2 !important;
+        font-size: medium;
+        font-weight: bold;
+    }
+
 .email-input input.is-invalid {
+    /* Additional styles for the input when it has the class 'is-invalid' */
+    border-color: red; /* Example: border color changes to red */
+}
+
+.email-input-two input.is-invalid {
     /* Additional styles for the input when it has the class 'is-invalid' */
     border-color: red; /* Example: border color changes to red */
 }
@@ -76,4 +95,39 @@ text-decoration: none;
     color: #FFFFF2; /* Change placeholder color */
 }
 
+.email-input-two input::placeholder,
+.password-input-two input::placeholder {
+    color: #000000; /* Change placeholder color */
+}
 
+/*  /////////////RESGISTER/////////////////////////////////////////////////////////////////// */
+
+.registerContainer{
+    background-image: url('../../assets/Register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center;
+    vertical-align: top;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; 
+    width: 100vw;
+}
+
+.innerRegisterContainer {
+ display: flex;
+ justify-content: row;
+}
+
+.innerRegisterTop{
+ padding: 350px 100px 0 0;
+}
+
+.innerRegisterBottom{
+ padding-bottom: 100px;
+ align-items: center;
+ text-align: center;
+ color: #000000;
+}
